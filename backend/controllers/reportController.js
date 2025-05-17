@@ -73,7 +73,7 @@ const exportUsersReport = async (req, res) => {
                 choreCount: 0,
                 pendingChores: 0,
                 inProgressChores: 0,
-                completedChore: 0,
+                completedChores: 0,
             };
         });
 

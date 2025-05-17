@@ -12,8 +12,8 @@ export const API_PATHS = {
         GET_ALL_USERS: "/api/users",
         GET_USER_BY_ID: (userId) => `/api/users/${userId}`,
         CREATE_USER: "/api/users",
-        UPDATE_USER: `/api/users/${userId}`,
-        DELETE_UESR: `/api/users/${userId}`,
+        UPDATE_USER: (userId) => `/api/users/${userId}`,
+        DELETE_USER: (userId) => `/api/users/${userId}`,
     },
 
     CHORES: {
@@ -22,7 +22,7 @@ export const API_PATHS = {
         GET_ALL_CHORES: "/api/chores",
         GET_CHORE_BY_ID: (choreId) => `/api/chores/${choreId}`,
         CREATE_CHORE: "/api/chores",
-        UPDATE_TASK: (choreId) => `/api/chores/${choreId}`,
+        UPDATE_CHORE: (choreId) => `/api/chores/${choreId}`,
         DELETE_CHORE: (choreId) => `/api/chores/${choreId}`,
         UPDATE_CHORE_STATUS: (choreId) => `/api/chores/${choreId}/status`,
         UPDATE_TODO_CHECKLIST: (choreId) => `/api/chores/${choreId}/todo`,
