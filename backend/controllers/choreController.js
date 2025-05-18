@@ -34,7 +34,7 @@ const getChores = async (req, res) => {
 
         const pendingChores = await Chore.countDocuments({
             ...filter,
-            status: "pending",
+            status: "Pending",
             ...(req.user.role !== "admin" && { assignedTo: req.user._id }),
         });
 
@@ -72,7 +72,7 @@ const getChoreById = async (req, res) => {
         const chore = await Chore.findById(req.params.id).populate("assignedTo", "name email profileImageUrl");
 
         if (!chore) {
-            res.status(404).json({ message: "Chore not found!" });
+            return res.status(404).json({ message: "Chore not found!" });
         }
 
         res.json(chore);
@@ -327,7 +327,7 @@ const getUserDashboardData = async (req, res) => {
             dueDate: { $lt: new Date() },
         });
 
-        const choreStatuses = ["Pending", "In Progress", "Complted"];
+        const choreStatuses = ["Pending", "In Progress", "Completed"];
         const choreDistributionRaw = await Chore.aggregate([
             { $match: { assignedTo: userId }},
             { $group: { _id: "$status", count: { $sum: 1 }}},

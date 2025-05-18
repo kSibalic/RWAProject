@@ -88,7 +88,7 @@ const exportUsersReport = async (req, res) => {
                         } else if (chore.status === "In Progress") {
                             userChoreMap[assignedUser._id].inProgressChores += 1;
                         } else if (chore.status === "Completed") {
-                            userChoreMap[assignedUser._id].completedChore += 1;   
+                            userChoreMap[assignedUser._id].completedChores += 1;   
                         }
                     }
                 });
